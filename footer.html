@@ -1,0 +1,42 @@
+<script src="/SiteAssets/spcd.js" type="text/javascript"></script>
+<script type="text/javascript">
+	//código dropdown aqui
+
+	function filtrar_campos(campo_pais, campo_estado, campo_cidade) {
+		var end_fat_pais2estado = new cascadeDropdowns(campo_pais, campo_estado, "Pais2", "Estados", "Title");
+		var end_fat_estado2cidade = new cascadeDropdowns(campo_estado, campo_cidade, "Estado2", "Cidades", "Title");
+	}
+
+	faturamento_pais = "Endereço de Faturamento - País";
+	faturamento_estado = "Endereço de Faturamento - Estado";
+	faturamento_cidade = "Endereço de Faturamento - Cidade";
+	filtrar_campos(faturamento_pais, faturamento_estado, faturamento_cidade);
+	
+	cobranca_pais = "Endereço de Cobrança - País";
+	cobranca_estado = "Endereço de Cobrança - Estado";
+	cobranca_cidade = "Endereço de Cobrança - Cidade";
+	filtrar_campos(cobranca_pais, cobranca_estado, cobranca_cidade);
+</script>
+
+<link href="/SiteAssets/DynForms/default.css" rel="stylesheet" type="text/css" />
+<script src="/SiteAssets/DynForms/spjs-utility.js" type="text/javascript"></script>
+<script src="/SiteAssets/DynForms/dffs.js" type="text/javascript"></script>
+
+<script src="/SiteAssets/DynForms/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script language="javascript" src="/SiteAssets/jquery.maskedinput-1.2.2.min.js" type="text/javascript"></script>
+
+<script language="javascript" type="text/javascript">
+	$(function($){
+		//$(".ms-long").not("[title='Correio Eletrônico']").blur(
+		//	function() {
+		//		$( this ).val( $( this ).val().toUpperCase() );
+		//		$( this ).attr('style', 'text-transform: uppercase;');
+		//	}
+		//);
+
+		$("input[title='CNPJ']").mask("99.999.999/9999-99");
+		$("input[title='CPF']").mask("999.999.999-99");
+		$("input[title='Endereço de Faturamento - CEP']").mask("99999-999");
+		$("input[title='Endereço de Cobrança - CEP']").mask("99999-999");
+	});
+</script>
